@@ -1,0 +1,40 @@
+
+name=input("Enter your name: ")
+print("Hi,"+name+" Time to play Hangman!")
+
+# select any word to play with
+word="smile"
+
+#creates an variable with an empty value
+guesses=""
+#determine the number of turns
+turns=5
+
+#check if the turns are more than zero
+while turns>0:
+    # make a counter to count failed attempt
+    failed=0
+    
+    # see if the character is 
+    #in the players guess
+    for char in word:
+        if char in guesses:
+            print(char,end=" ")
+        else:
+            print("_",end=" ")
+            failed+=1
+
+    if failed==0:
+        print("-->You won")
+        break 
+   
+    guess=input("Guess a character: ")
+    guesses+=guess 
+
+    if guess not in word:
+         turns-=1
+         print("wrong")
+         print ("You have" , + turns, " more guesses")
+
+    if turns==0:
+         print("You Loose!")
