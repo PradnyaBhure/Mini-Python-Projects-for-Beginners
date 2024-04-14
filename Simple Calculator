@@ -1,5 +1,3 @@
-n1=int(input("Enter First Number :"))
-n2=int(input("Enter Second Number :"))
 while True:
     print()
     print("-"*20)
@@ -11,23 +9,29 @@ while True:
     print("4. Division")
     print("5. Exit")
     print("-"*20)
-    ch=int(input("Enter your choice (1 to 5): "))
-    if ch==1:
+    choice=int(input("Enter your choice (1 to 5): "))
+    
+    if choice==5:
+        break
+    if choice not in [1,2,3,4,5]:
+        print("Invalid choice! Try again.")
+        break
+        
+    n1=int(input("Enter First Number :"))
+    n2=int(input("Enter Second Number :"))    
+    
+    if choice==1:
         ans=n1+n2
         print(n1," + ",n2," = ",ans)
-    elif ch==2:
+    elif choice==2:
         ans=n1-n2 
         print(n1," - ",n2," = ",ans)
-    elif ch==3:
+    elif choice==3:
         ans=n1*n2
         print(n1," * ",n2," = ",ans)
-    elif ch==4:
+    else: 
         if(n2==0):
             print("Denominator can't be zero.")
         else:
             ans=n1/n2
             print(n1," / ",n2," = ",ans)    
-    elif ch==5:
-        break
-    else:
-        print("Invalid choice, Try again!")
