@@ -1,0 +1,19 @@
+#install captcha Module with the following command
+pip install captcha
+
+
+# Import the following module
+from captcha.image import ImageCaptcha
+
+# Enter captcha text
+text = input("Enter the CAPTCHA text: ")
+
+# Create a captcha instance of the given size and font
+captcha = ImageCaptcha(width = 400,height = 200,
+                      fonts=['arial','calibri','ALGER'],
+                      font_sizes=(40,70,100))
+
+# write the image on the given file and save it
+captcha.write(text, 'CAPTCHA.png')
+
+  
